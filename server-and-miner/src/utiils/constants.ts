@@ -1,0 +1,25 @@
+import { BlockParams } from "../types";
+import { calculateBlockHash } from "./helper";
+
+const genesis:BlockParams = {
+    index: 0,
+    timeStamp: Date.now(),
+    prevHash: '0',
+    nonce: 0,
+    hash: '',
+    transaction: [],
+}
+
+genesis.hash = calculateBlockHash(genesis);
+
+const constants = {
+    PORT: 5000,
+    DIFICULTY: 2,
+    REQUIRED_NONCE: '',
+    GENESIS_BLOCK: genesis,
+    BEST_CHAIN: [genesis],
+}
+
+constants.REQUIRED_NONCE = '0'.repeat(constants.DIFICULTY)
+
+export default constants;
