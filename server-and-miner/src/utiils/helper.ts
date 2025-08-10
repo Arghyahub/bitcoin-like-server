@@ -11,3 +11,8 @@ export function calculateBlockHash(input:CalcHashType) {
     const hash = sha256(input.index + input.prevHash + input.timeStamp + JSON.stringify(input.transaction) + input.nonce);
     return hash;
 }
+
+export function addressFromPub(pub: string) {
+    // Returns dummy address
+    return sha256(pub).slice(0,40);
+}

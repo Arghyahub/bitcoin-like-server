@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev:server": "nodemon --watch src src/server.ts"
+    "dev:server": "nodemon --watch src src/server.ts",
+    "dev:miner": "nodemon --watch src src/miner.ts"
   },
   "repository": {
     "type": "git",

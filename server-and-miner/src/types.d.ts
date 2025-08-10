@@ -2,6 +2,9 @@ export interface TransactionParams {
   from: string;
   to: string;
   amount: number;
+  timestamp: number;
+  signature?: string;
+  publicKey?: string;
 }
 
 export interface BlockParams {
@@ -14,7 +17,7 @@ export interface BlockParams {
 }
 
 export type WSMsgType =
-  | { type: "TX"; data: Record<any, any> }
+  | { type: "TX"; data: TransactionParams }
   | { type: "BLOCK"; data: BlockParams }   // inserts a block and returns that block    
   | { type: "CHAIN_REQUEST" }                 // request entire chain
   | { type: "CHAIN_RESPONSE"; data: BlockParams[] }   // return entire chain
